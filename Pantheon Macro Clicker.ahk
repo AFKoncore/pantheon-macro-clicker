@@ -8,14 +8,14 @@
 ; You can hold Ctrl to freeze the numbers and paste them inside the Click(###, ###) command to make 
 ; the script send a click at those coordinates.
 
-;You can look up the list of AHK keybinds to assign a hotkey to this click command: https://www.autohotkey.com/docs/v1/KeyList.htm
+; You can look up the list of AHK keybinds to assign a hotkey to this click command: https://www.autohotkey.com/docs/v1/KeyList.htm
 ; and here is the documentation about hotkeys themselves: https://www.autohotkey.com/docs/v1/Hotkeys.htm
 
 F8:: 
 	Reload ; F8 reloads the script to apply any newly saved changes
 return
 
-#ifWinActive, ahk_exe Pantheon.exe ; The keybinds below are only actives when Pantheon is the foreground window in focus
+#ifWinActive, ahk_exe Pantheon.exe ; The keybinds below are only active when Pantheon is the foreground window in focus
 
 ;Exemple:
 ; 4:: 	 			;this hotkey activates when you press 4.
