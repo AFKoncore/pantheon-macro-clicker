@@ -1,4 +1,5 @@
 #SingleInstance force
+SetMouseDelay, 0
 
 ; Pantheon Macro Clicker, by Core (afkoncore). 
 ; Uses Auto Hot Key v1.1 https://www.autohotkey.com/download/1.1/?C=M;O=D
@@ -58,16 +59,21 @@ click(x, y){ ; the click function
 		LButton := 1
 		Click, Up ; releases left click if it's being help down to allow the macro click to happen
 	}
-	
+	if (LButton || RButton){
+		Sleep, 50
+	}
 	MouseGetPos, mX, mY ;save the current mouse position to restore it after clicking
 	Click, %x% %y%
+	Sleep, 50
 	MouseMove, %mX%, %mY%, 0
-	
-	if (RButton){
-		Click, Down Right ; press back down on right click if it was held down
-	}
-	if (LButton){
-		Click, Down ; press back down on left click if it was held down
-	}
-	Sleep, 100
+	if (LButton || RButton){
+		Sleep, 50
+		if (RButton){
+			Click, Down Right ; press back down on right click if it was held down
+		}
+		if (LButton){
+			Click, Down ; press back down on left click if it was held down
+		}	
+	}	
+	Sleep, 50
 }
